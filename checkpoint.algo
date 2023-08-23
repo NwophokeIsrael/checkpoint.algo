@@ -1,0 +1,34 @@
+ALGORITHM AnalyzeSentence(sentence)
+    sentenceLength := 0
+    wordCount := 0
+    vowelCount := 0
+    vowels := "aeiouAEIOU"
+
+    FOR each character (char) IN sentence
+        IF char is a space
+            Increment wordCount by 1
+        ELSE IF char is in vowels
+            Increment vowelCount by 1
+        END IF
+        
+        Increment sentenceLength by 1
+    END FOR
+
+    Increment wordCount by 1  // Adjust for the last word
+    
+    Write("Length of the sentence: " + sentenceLength + " characters");
+    Write("Number of words in the sentence: " + wordCount);
+    Write("Number of vowels in the sentence: " + vowelCount);
+END ALGORITHM
+
+// Read the sentence from the user
+inputSentence := INPUT("Enter a sentence ending with a period: ")
+
+IF last character of inputSentence is not "."
+    PRINT "Invalid input. Sentence should end with a period."
+ELSE
+    CALL AnalyzeSentence(inputSentence)
+END IF
+
+
+
